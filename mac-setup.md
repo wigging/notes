@@ -185,6 +185,12 @@ These settings are for the SideBarEnhancements plugin. The settings are availabl
 
 Install LaTeXTools package, see instructions at [latextools.readthedocs.io](https://latextools.readthedocs.io/en/latest/).
 
+In `Sublime Text -> Preferences -> Package Settings -> LaTeXTools -> Settings - User` make the Preview app the viewer for the PDF.
+
+```json
+"viewer": "preview",
+```
+
 ## Visual Studio Code
 
 Extensions and theme. For the Rewrap extension, word wrapping can be automatically enabled with `Cmd+Shift+P` then select `Rewrap: Toggle Auto-Wrap`.
