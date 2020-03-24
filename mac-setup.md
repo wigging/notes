@@ -147,6 +147,12 @@ Install SublimeLinter package, see instructions at [sublimelinter.com](http://su
 
 Install SublimeLinter-flake8 for Python, see [github.com/SublimeLinter/SublimeLinter-flake8](https://github.com/SublimeLinter/SublimeLinter-flake8)
 
+Make sure flake8 is installed otherwise the flake8 linter will not work.
+
+```bash
+conda install flake8
+```
+
 In Sublime Text, go to `Preferences -> Package Settings -> SublimeLinter -> Settings` and add the following linter options:
 
 ```json
