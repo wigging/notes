@@ -115,6 +115,9 @@ git remote remove origin
 
 # Remove local branches that no longer exist on remote
 git remote prune origin
+
+# Change a remote's URL
+git remote set-url origin https://github.com/USERNAME/REPOSITORY.git
 ```
 
 ## Reset a repository
