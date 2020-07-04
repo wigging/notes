@@ -2,53 +2,56 @@
 
 Some notes on using Zsh (also called Z shell) on a Mac.
 
-## Prezto
+## Pure
 
-The first thing to do on a new Mac is install Prezto. It is a configuration framework for Zsh. Visit the GitHub repo linked below for installation instructions and more information.
+The first thing to do on a new Mac is install Pure to improve the Zsh prompt. Use the suggested theme in the Pure documentation.
 
-https://github.com/sorin-ionescu/prezto
+https://github.com/sindresorhus/pure
 
 ## `.zshrc`
 
 This is the contents of my Zsh profile which is located at `~/.zshrc`. It assumes Prezto has been installed. The section at the bottom is from the Anaconda installation of Python.
 
 ```
-#
-# Executes commands at the start of an interactive session.
-#
-# Authors:
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
-#
+# Configure the Pure prompt
+# See https://github.com/sindresorhus/pure
 
-# Source Prezto.
-if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-fi
+fpath+=$HOME/.zsh/pure
 
-# Customize to your needs...
+autoload -U promptinit; promptinit
+prompt pure
+
+# Enable color for `ls` output
+export CLICOLOR=1
 
 # Set VIM as the default terminal editor
 export VISUAL=vim
 export EDITOR=vim
 
-# Use ipdb debugger for Python breakpoint()
+# Use ipdb debugger as the Python breakpoint() debugger
 export PYTHONBREAKPOINT=ipdb.set_trace
 
-# Start terminal in desktop directory
-cd ~/Desktop
+# Start terminal in ~/Desktop directory and list files
+cd ~/Desktop; ls
 
 # Open Sublime Text from command line
 alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
 
-# Automatically list files when changing directory
+# List everything including hidden files
+alias la="ls -a"
+
+# Change directory without using `cd`
+setopt AUTO_CD
+
+# List files after changing directory
 function chpwd() {
     emulate -L zsh
-    ll
+    ls
 }
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/gavinw/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/Users/gavinw/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
