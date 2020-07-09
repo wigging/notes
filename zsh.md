@@ -22,6 +22,10 @@ fpath+=$HOME/.zsh/pure
 autoload -U promptinit; promptinit
 prompt pure
 
+PURE_GIT_DOWN_ARROW=⬇︎
+
+PURE_GIT_UP_ARROW=⬆︎
+
 # Zsh configuration
 # ----------------------------------------------------------------------------
 
