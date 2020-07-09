@@ -8,18 +8,22 @@ The first thing to do on a new Mac is install Pure to improve the Zsh prompt. Us
 
 https://github.com/sindresorhus/pure
 
-## `.zshrc`
+## .zshrc
 
 This is the contents of my Zsh profile which is located at `~/.zshrc`. It assumes Prezto has been installed. The section at the bottom is from the Anaconda installation of Python.
 
 ```
-# Configure the Pure prompt
-# See https://github.com/sindresorhus/pure
+# Pure prompt configuration
+# https://github.com/sindresorhus/pure
+# ----------------------------------------------------------------------------
 
 fpath+=$HOME/.zsh/pure
 
 autoload -U promptinit; promptinit
 prompt pure
+
+# Zsh configuration
+# ----------------------------------------------------------------------------
 
 # Enable color for `ls` output
 export CLICOLOR=1
@@ -32,13 +36,16 @@ export EDITOR=vim
 export PYTHONBREAKPOINT=ipdb.set_trace
 
 # Start terminal in ~/Desktop directory and list files
-cd ~/Desktop; ls
+cd ~/Desktop
 
 # Open Sublime Text from command line
 alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
 
-# List everything including hidden files
-alias la="ls -a"
+# List line-by-line including hidden files
+alias la="ls -aoh"
+
+# List line-by-line
+alias ll="ls -oh"
 
 # Change directory without using `cd`
 setopt AUTO_CD
