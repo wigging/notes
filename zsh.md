@@ -10,7 +10,7 @@ https://github.com/sindresorhus/pure
 
 ## .zshrc
 
-This is the contents of my Zsh profile which is located at `~/.zshrc`. It assumes Prezto has been installed. The section at the bottom is from the Anaconda installation of Python.
+This is the contents of my Zsh profile which is located at `~/.zshrc`. It assumes Pure, Xcode, and Miniconda have been installed. The section at the bottom is from the Miniconda installation of Python.
 
 ```
 # Pure prompt configuration
@@ -28,6 +28,9 @@ PURE_GIT_UP_ARROW=⬆︎
 
 # Zsh configuration
 # ----------------------------------------------------------------------------
+
+# Enable completion system
+autoload -Uz compinit && compinit
 
 # Enable color for `ls` output
 export CLICOLOR=1
