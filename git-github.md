@@ -191,7 +191,7 @@ Next, push the "main" branch to the remote GitHub repository:
 $ git push -u origin main
 ```
 
-Finally, delete the remote "master" branch for the GitHub repository:
+Next, for the GitHub repository, go to Settings -> Branches and change the default branch from "master" to "main". Finally, delete the remote "master" branch for the GitHub repository:
 
 ```bash
 $ git push origin --delete master
